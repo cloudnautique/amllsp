@@ -1,0 +1,12 @@
+containers: {
+    app: {
+        image: "nginx"
+    }
+}
+
+secrets: password: {
+    type: "token"
+    data: {}
+}
+
+volumes: "my-data": {}

@@ -1,0 +1,20 @@
+args: replicas: 1
+if args.replicas > 0 {
+    for i in std.range(0,2) {
+        containers: {
+            "one-\(i)": {
+                image: "redis"
+            }
+        }
+
+        secrets: "leader-pass": type: "token"
+    }
+}
+
+volumes: "test": {}
+
+localData: {
+	serverBlocks: {
+		gitHtmlDir: "/var/html"
+    }
+}
